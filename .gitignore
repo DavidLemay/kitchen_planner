@@ -1,2 +1,6 @@
+#Python venv
 /venv/
+
+# Visual studio config
 .vscode/**
+
