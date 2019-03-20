@@ -1,6 +1,7 @@
 from requests import get
 from requests.exceptions import RequestException
 from contextlib import closing
+from urllib.parse import urlparse
 
 """
     Helper functions
@@ -32,9 +33,12 @@ def is_good_response(resp):
             and content_type is not None 
             and content_type.find('html') > -1)
 
-
 def log_error(e):
     """
     #TODO replace by actual logs
     """
     print(e)
+
+def get_hostname(long_url):
+    r = urlparse(long_url)
+    return r.hostname
